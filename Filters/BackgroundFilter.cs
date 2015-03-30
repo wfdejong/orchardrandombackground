@@ -68,7 +68,10 @@ namespace Orchard.RandomBackground.Filters
 			int randomNumber = rnd.Next(0, (backgroundCount-1)); 
 			
 			MediaPickerField backgroundField = (MediaPickerField)backgrounds[randomNumber].Fields.FirstOrDefault();
-			
+
+			if (backgroundField.Url == null)
+				return;
+
 			UrlHelper helper = new UrlHelper(filterContext.RequestContext);
 			string imgPath = helper.Content(backgroundField.Url);
 
