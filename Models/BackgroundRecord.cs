@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Orchard.ContentManagement;
+using Orchard.ContentManagement.Records;
 
 namespace Orchard.RandomBackground.Models
 {
-	public class BackgroundRecord
+	public class BackgroundPartRecord : ContentPartRecord
 	{
-		public virtual string Path { get; set; }
+	}
+
+	public class BackgroundPart : ContentPart<BackgroundPartRecord>
+	{		
 	}
 }

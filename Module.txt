@@ -1,10 +1,11 @@
-﻿Name: Orchard.RandomBackground
+﻿Name: Random Background
 AntiForgery: enabled
-Author: The Orchard Team
-Website: http://orchardproject.net
-Version: 1.0
-OrchardVersion: 1.0
-Description: Description for the module
-Features:
-    Orchard.RandomBackground:
-        Description: Description for feature Orchard.RandomBackground.
+Author: Willem de Jong
+Website: http://willemdejong.net
+Version: 0.9.0
+OrchardVersion: 1.7.1
+FeatureDescription: With every page load this module selects radomly a image from a list and sets it as the background.
+Description: With every page load this module selects radomly a image from a list and sets it as the background.
+Dependencies: Orchard.MediaPicker, Orchard.JQuery
+Category: Media
+Tags: Background, Random, Random Background

@@ -1,43 +1,24 @@
 ﻿using Orchard.Caching;
-using Orchard.Data;
+using Orchard.ContentManagement;
 using Orchard.RandomBackground.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Orchard.RandomBackground.Services
 {
 	public class BackgroundService : IBackgroundService
 	{
-		private const string DefaultScript = "";
-
-		private readonly IRepository<BackgroundRecord> _repository;
-		private readonly ISignals _signals;
-
+		private readonly IContentManager _contentManager;
+		
 		public BackgroundService(
-			IRepository<BackgroundRecord> repository,
+			IContentManager contentManager,
 			ISignals signals)
 		{
-			_repository = repository;
-			_signals = signals;
+			_contentManager = contentManager;
 		}
 
-		public IEnumerable<BackgroundRecord> Get()
+		public IEnumerable<BackgroundPart> Get()
 		{
-			return _repository.Table;
+			return _contentManager.Query<BackgroundPart>().List();
 		}
-
-		//public bool Set(bool enable, string script)
-		//{
-		//	var settings = Get();
-
-		//	settings.Enable = enable;
-		//	settings.Script = script;
-
-		//	_signals.Trigger("GoogleAnalytics.SettingsChanged");
-
-		//	return true;
-		//}
 	}
 }
